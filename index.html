@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>XXXXX - Classic Snake Game</title>
+    <meta name="description" content="Play XXXXX, the classic snake game reimagined. Challenge yourself, beat high scores, and enjoy this addictive arcade game on any device.">
+    <meta name="keywords" content="XXXXX game, snake game, arcade game, mobile game, classic game, browser game">
+    <meta name="author" content="XXXXX Games">
+    <meta property="og:title" content="XXXXX - Classic Snake Game">
+    <meta property="og:description" content="Play XXXXX, the classic snake game reimagined. Challenge yourself and beat high scores!">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#2c3e50">
+    <link rel="stylesheet" href="snake.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .info-section {
+            color: white;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .faq-item {
+            margin: 15px 0;
+        }
+        .faq-item h3 {
+            color: #2ecc71;
+            margin-bottom: 5px;
+        }
+        .description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        /* Add new heading styles */
+        .game-title {
+            font-family: 'Press Start 2P', cursive;
+            color: #2ecc71;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71;
+            }
+            to {
+                text-shadow: 0 0 10px #2ecc71, 0 0 20px #2ecc71;
+            }
+        }
+
+        .info-section h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #e74c3c;
+            text-align: center;
+            font-size: 1.8em;
+            margin: 25px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+
+        .faq-item h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: #3498db;
+            font-size: 1.2em;
+            margin: 15px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">XXXXX</h1>
+        <div class="score-display">Score: <span id="score">0</span></div>
+        <div class="high-score">High Score: <span id="highScore">0</span></div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="gameOver" class="hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartButton">Play Again</button>
+        </div>
+    </div>
+    <div class="controls">
+        <p class="desktop-controls">Use Arrow Keys to Move</p>
+        <div class="mobile-controls">
+            <button id="upButton">↑</button>
+            <div class="horizontal-controls">
+                <button id="leftButton">←</button>
+                <button id="rightButton">→</button>
+            </div>
+            <button id="downButton">↓</button>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="description">
+            <h2>About XXXXX</h2>
+            <p>Welcome to XXXXX, a modern take on the classic snake game. Guide your snake to collect food, grow longer, and achieve the highest score possible. Be careful not to hit the walls or yourself!</p>
+        </div>
+
+        <div class="faqs">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How to Play?</h3>
+                <p>Use arrow keys on desktop or on-screen buttons on mobile to control the snake's direction. Collect food to grow and increase your score.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is Score Calculated?</h3>
+                <p>You earn 10 points for each food item collected. The game speeds up as you collect more food!</p>
+            </div>
+            <div class="faq-item">
+                <h3>What Causes Game Over?</h3>
+                <p>The game ends if you hit the walls or collide with your own tail. Try to plan your moves carefully!</p>
+            </div>
+            <div class="faq-item">
+                <h3>How to Get High Scores?</h3>
+                <p>Focus on efficient movement, plan your path ahead, and try to use all available space as you grow longer.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="snake.js"></script>
+</body>
+</html>
